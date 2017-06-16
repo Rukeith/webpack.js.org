@@ -2,7 +2,7 @@
 # see https://gist.github.com/domenic/ec8b0fc8ab45f39403dd
 set -e # Exit with nonzero exit code if anything fails
 
-SOURCE_BRANCH="master"
+SOURCE_BRANCH="tw"
 
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
@@ -39,6 +39,7 @@ openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in scripts/deploy_key.e
 chmod 600 scripts/deploy_key
 eval `ssh-agent -s`
 ssh-add scripts/deploy_key
+chmod -R 777 node_modules/gh-pages/
 
 # Now that we're all set up, we can deploy
 npm run deploy

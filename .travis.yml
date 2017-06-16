@@ -2,6 +2,7 @@ branches:
   only:
     - master
     - develop
+    - tw
 language: node_js
 node_js:
   - "6"
