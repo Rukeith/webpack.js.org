@@ -2,6 +2,8 @@
 
 # webpack.js.org
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Rukeith/webpack.js.org.svg)](https://greenkeeper.io/)
+
 Guides, documentation, and all things webpack.
 
 ## Contributing
